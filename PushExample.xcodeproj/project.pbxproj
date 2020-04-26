@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,9 @@
 		448547BA2454E2D1001CE426 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 448547B92454E2D1001CE426 /* Assets.xcassets */; };
 		448547BD2454E2D1001CE426 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 448547BC2454E2D1001CE426 /* Preview Assets.xcassets */; };
 		448547C02454E2D1001CE426 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 448547BE2454E2D1001CE426 /* LaunchScreen.storyboard */; };
+		448547C92454E346001CE426 /* IntermediaryAppDelegate in Frameworks */ = {isa = PBXBuildFile; productRef = 448547C82454E346001CE426 /* IntermediaryAppDelegate */; };
+		448547CC2454E3AF001CE426 /* SceneAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448547CB2454E3AF001CE426 /* SceneAppDelegate.swift */; };
+		448547CE2454E438001CE426 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448547CD2454E438001CE426 /* NotificationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		448547BC2454E2D1001CE426 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		448547BF2454E2D1001CE426 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		448547C12454E2D1001CE426 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		448547CB2454E3AF001CE426 /* SceneAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneAppDelegate.swift; sourceTree = "<group>"; };
+		448547CD2454E438001CE426 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		448547CF2454EC4A001CE426 /* PushExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PushExample.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				448547C92454E346001CE426 /* IntermediaryAppDelegate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +63,8 @@
 		448547B22454E2CE001CE426 /* PushExample */ = {
 			isa = PBXGroup;
 			children = (
-				448547B32454E2CE001CE426 /* AppDelegate.swift */,
+				448547CF2454EC4A001CE426 /* PushExample.entitlements */,
+				448547CA2454E34B001CE426 /* AppDelegates */,
 				448547B52454E2CE001CE426 /* SceneDelegate.swift */,
 				448547B72454E2CE001CE426 /* ContentView.swift */,
 				448547B92454E2D1001CE426 /* Assets.xcassets */,
@@ -75,6 +83,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		448547CA2454E34B001CE426 /* AppDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				448547B32454E2CE001CE426 /* AppDelegate.swift */,
+				448547CB2454E3AF001CE426 /* SceneAppDelegate.swift */,
+				448547CD2454E438001CE426 /* NotificationService.swift */,
+			);
+			path = AppDelegates;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,6 +109,9 @@
 			dependencies = (
 			);
 			name = PushExample;
+			packageProductDependencies = (
+				448547C82454E346001CE426 /* IntermediaryAppDelegate */,
+			);
 			productName = PushExample;
 			productReference = 448547B02454E2CE001CE426 /* PushExample.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +140,9 @@
 				Base,
 			);
 			mainGroup = 448547A72454E2CE001CE426;
+			packageReferences = (
+				448547C72454E345001CE426 /* XCRemoteSwiftPackageReference "IntermediaryAppDelegate" */,
+			);
 			productRefGroup = 448547B12454E2CE001CE426 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -147,8 +171,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				448547B42454E2CE001CE426 /* AppDelegate.swift in Sources */,
+				448547CE2454E438001CE426 /* NotificationService.swift in Sources */,
 				448547B62454E2CE001CE426 /* SceneDelegate.swift in Sources */,
 				448547B82454E2CE001CE426 /* ContentView.swift in Sources */,
+				448547CC2454E3AF001CE426 /* SceneAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +242,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +296,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -284,6 +310,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PushExample/PushExample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PushExample/Preview Content\"";
 				DEVELOPMENT_TEAM = DU43M2W7RB;
@@ -304,6 +331,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PushExample/PushExample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PushExample/Preview Content\"";
 				DEVELOPMENT_TEAM = DU43M2W7RB;
@@ -342,6 +370,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		448547C72454E345001CE426 /* XCRemoteSwiftPackageReference "IntermediaryAppDelegate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/steg132/IntermediaryAppDelegate.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		448547C82454E346001CE426 /* IntermediaryAppDelegate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 448547C72454E345001CE426 /* XCRemoteSwiftPackageReference "IntermediaryAppDelegate" */;
+			productName = IntermediaryAppDelegate;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 448547A82454E2CE001CE426 /* Project object */;
 }

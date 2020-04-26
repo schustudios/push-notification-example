@@ -9,8 +9,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var notiService = NotificationService.shared
+
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            Button(action: {
+                let center = UNUserNotificationCenter.current()
+                center.requestAuthorization(options: [.alert, .sound, .badge]) {
+                    (granted, _) in
+                }
+            }) {
+                Text("Request Permissions")
+            }
+            Text(notiService.deviceToken)
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 20.0, trailing: 0))
+
+            Text("Incoming Push Notification")
+
+            Text(notiService.pushNotification)
+            .lineLimit(nil)
+
+        }
     }
 }
 
